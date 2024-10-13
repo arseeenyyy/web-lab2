@@ -2,9 +2,9 @@ package com.github.arseeenyyy;
 
 public class Point {
     private String name; 
-    private int age;
+    private String age;
 
-    public Point(String name, int age) {
+    public Point(String name, String age) {
         this.name = name;
         this.age = age;
     }
@@ -12,7 +12,7 @@ public class Point {
     public String getName() {
         return name;
     }
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 }
