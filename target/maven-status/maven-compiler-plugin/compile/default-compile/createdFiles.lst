@@ -1,3 +1,5 @@
-com/github/arseeenyyy/Point.class
+com/github/arseeenyyy/util/Checker.class
+com/github/arseeenyyy/util/Point.class
 com/github/arseeenyyy/ControllerServlet.class
 com/github/arseeenyyy/AreaCheckServlet.class
+com/github/arseeenyyy/util/Validator.class

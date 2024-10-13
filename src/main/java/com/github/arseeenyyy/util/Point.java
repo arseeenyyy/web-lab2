@@ -1,4 +1,4 @@
-package com.github.arseeenyyy;
+package com.github.arseeenyyy.util;
 
 public class Point {
     private int x; 

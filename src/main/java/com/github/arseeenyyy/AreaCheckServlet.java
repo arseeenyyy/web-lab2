@@ -1,6 +1,7 @@
 package com.github.arseeenyyy;
 
 import com.github.arseeenyyy.util.Checker;
+import com.github.arseeenyyy.util.Point;
 import com.github.arseeenyyy.util.Validator;
 import com.google.gson.Gson;
 import java.io.IOException;

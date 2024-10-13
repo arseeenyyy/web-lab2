@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/controller")
 public class ControllerServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException {
         try {
             if (request.getParameter("x") != null && request.getParameter("y") != null && request.getParameter("r") != null) {
                 request.getRequestDispatcher("./check").forward(request, response);
