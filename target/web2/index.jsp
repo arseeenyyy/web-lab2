@@ -214,8 +214,6 @@
                         <label for="y" class="data-label">Y:</label>
                         <input type="text" id="y-value" name="y" placeholder="Enter Y {-5;5}">
                         <br>
-                        <br>
-                        <br>
                         <label for="r" class="data-label">R:</label>
                         <input type="hidden" name="r" id="r-value" value="">
                         <input type="button" class="r-button" value="1">
@@ -226,6 +224,21 @@
                     </form>
                 </td>
             </tr>        
+            <tr>
+                <td id="results" class="content" colspan="2">
+                    <h2 class="title-plate">Hit Results</h2>
+                    <table id="result-table">
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Current Time</th>
+                            <th>Execution Time</th>
+                            <th>Hit result</th>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
         </table>
     </body>
 

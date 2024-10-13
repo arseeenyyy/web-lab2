@@ -49,6 +49,8 @@
                 background-color: var(--secondary-background-color);
                 border-radius: var(--default-borders-radius);
                 border: 2px solid var(--default-borders-color);
+                align-items: center;
+                justify-content: center;
             }
             .title-plate {
                 text-align: center;
@@ -64,6 +66,11 @@
                 width: 50%;
                 text-align: center;
             }
+            #data-form {
+                text-align: center;
+                align-items: center;
+                
+            }
             #result-table {
                 width: 100%;
                 text-align: center;
@@ -72,9 +79,6 @@
             #result-table th, #result-table td {
                 border: 1px solid var(--default-borders-color);
                 padding: 8px;
-            }
-            form {
-                text-align: center;
             }
 
             .r-button {
@@ -90,7 +94,7 @@
                 transition: background-color 0.3s ease;
             }
 
-            .x-button:hover {
+            .r-button:hover {
                 background-color: var(--primary-background-color);
             }
 
@@ -104,19 +108,6 @@
                 height: 15px;
                 margin: 10px;
             }
-
-            select {
-                background-color: var(--primary-background-color);
-                border: 2px solid var(--default-borders-color);
-                border-radius: var(--default-borders-radius);
-                font-size: 16px;
-                padding: 10px;
-                width: 200px;
-                height: 40px;
-                margin: 10px;
-                cursor: pointer;
-            }
-
             input[type="submit"] {
                 background-color: var(--secondary-background-color);
                 border: 2px solid var(--default-borders-color);
@@ -126,14 +117,14 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease;
             }
-
+            
 
             input[type="submit"]:hover {
                 background-color: var(--primary-background-color);
             }
-            .x-button.active {
+            .r-button.active {
                 background-color: var(--error-color);
-                color: white;
+                color: black;
                 border: 2px solid black;
             }   
             .error-message {
@@ -141,6 +132,27 @@
                 font-size: 12px;
                 margin-top: 5px;
             }
+            .x-radio {
+                width: 20px;         
+                height: 20px;        
+                accent-color: black;  
+                cursor: pointer;     
+                margin-right: 10px;  
+                transition: transform 0.2s ease; 
+            }
+            .x-radio:hover {
+                transform: scale(1.2);  
+            }
+            label {
+                font-size: 18px;        
+                font-weight: bold;      
+                color: black;            
+                margin-right: 10px;     
+            }
+            .x-radio:checked {
+                background-color: #f0e6dc; /* Цвет фона для активной кнопки */
+            }
+            
         </style> 
     </head>
     <body>
@@ -199,6 +211,7 @@
                 </td>
                 <td class="content">
                     <h2 class="title-plate">Input Data</h2>
+                    <div id="data-form">
                     <form action="controller" id="input-form" method="post">
                         <label for="x" class="data-label">X:</label>
                         <label><input type="radio" name="x-value" class="x-radio" value="-5"> -5</label>
@@ -221,10 +234,29 @@
                         <input type="button" class="r-button" value="3">
                         <input type="button" class="r-button" value="4">
                         <input type="button" class="r-button" value="5">
+                        <br>
+                        <br>
+                        <input type="submit" value="Submit">
+                        <div id="error-message"></div>
                     </form>
+                </div>
                 </td>
             </tr>        
+            <tr>
+                <td id="results" class="content" colspan="2">
+                    <h2 class="title-plate">Hit Results</h2>
+                    <table id="result-table">
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Current Time</th>
+                            <th>Execution Time</th>
+                            <th>Hit result</th>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
         </table>
     </body>
-
 </html>
