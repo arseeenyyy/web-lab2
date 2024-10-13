@@ -26,6 +26,16 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+        <!-- <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency> -->
     </dependencies>
     <build>
         <finalName>web2</finalName>
