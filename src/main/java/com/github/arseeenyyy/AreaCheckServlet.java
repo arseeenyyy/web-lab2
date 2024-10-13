@@ -34,6 +34,7 @@ public class AreaCheckServlet extends HttpServlet {
 
         Gson gson = new Gson();
         String jsonResponse = gson.toJson(point);
+        
 
         PrintWriter out = response.getWriter();
         out.print(jsonResponse);
