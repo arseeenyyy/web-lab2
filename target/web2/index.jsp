@@ -22,7 +22,7 @@
             <tr>
                 <td id="graph" class="content">
                     <h2 class="title-plate">Graph</h2>
-                    <svg width="400" height="400" viewBox="-200 -200 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="plot" width="400" height="400" viewBox="-200 -200 400 400" xmlns="http://www.w3.org/2000/svg">
                         <line x1="-200" y1="0" x2="200" y2="0" stroke="black"></line> 
                         <line x1="0" y1="200" x2="0" y2="-200" stroke="black"></line> 
                         <line x1="-150" y1="-5" x2="-150" y2="5" stroke="black"></line>

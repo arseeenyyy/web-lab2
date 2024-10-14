@@ -9,7 +9,16 @@ function highlightRButton() {
         })
     })
 }
+function clearSelection() {
+    var elements = document.getElementsByTagName('input'); 
+    for (var i = 0; i < elements.length; i ++) {
+        if (elements[i].type == 'radio') 
+            elements[i].checked = false;
+    }
+    document.getElementById('y-value').value = '';
+}
 function validateX(x) {
+    document.getElementById('error-message').innerHTML = '';
     if (!x) {
         writeErrorMessage('Please choose X value');
         return false;
@@ -17,6 +26,7 @@ function validateX(x) {
     return true;
 }
 function validateY(y) {
+    document.getElementById('error-message').innerHTML = '';
     const yValueFloat = parseFloat(y); 
     if (isNaN(yValueFloat)) {
         writeErrorMessage('Y value should be numeric');
@@ -29,6 +39,7 @@ function validateY(y) {
     }
 }
 function validateR(r) {
+    document.getElementById('error-message').innerHTML = '';
     if (!r) {
         writeErrorMessage('Please choose R value'); 
         return false;
