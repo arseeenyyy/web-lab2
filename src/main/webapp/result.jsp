@@ -9,18 +9,10 @@
         <meta name="description" content="Web-programming, lab2">
         <meta name="keywords" content="ITMO, Web-programming, VT">
         <title>Laboratory work no. 2 | Web-programming | ResultPage </title>
-        <style>
-        </style>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css">
     </head>
     <body>
-        <header>
-            <h1>Web - programming | Laboratory no. 2 | Var no. 115218 </h1>
-            <div id="credit">
-                <a href="https://github.com/arseeenyyy">Rubtsov Arseniy Dmitrievich | P3206</a>
-            </div>
-        </header>
-
-        <table border="1">
+        <table id="result-table">
             <tr>
                 <th>X</th>
                 <th>Y</th>
@@ -41,22 +33,15 @@
                             <td><%= point.getR() %></td>
                             <td><%= new java.util.Date() %></td>
                             <td><%= point.getExecutionTime() %></td>
-                            <td><%= point.getResult() ? "Yes" : "No" %></td>
+                            <td><%= point.getResult() ? "hit" : "miss" %></td>
                         </tr>
             <%
                     }
                 } else {
             %>
-                <tr>
-                    <td colspan="6">No data available</td>
-                </tr>
             <%
                 }
             %>
         </table>
-
-        <div>
-            <a href="index.jsp">Return to main page</a>
-        </div>
     </body>
 </html>

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.github.arseeenyyy.util.Point" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,153 +9,7 @@
         <meta name="description" content="Web-programming, lab2">
         <meta name="keywords" content="ITMO, Web-programming, VT">
         <title>Laboratory work no. 2 | Web-programming </title>
-        <style>
-            :root {
-                --primary-background-color: #f0e6dc;
-                --secondary-background-color: #d9c9b7;
-                --head-background-color: #f2f2f2;
-                --default-borders-color: black;
-                --error-color: #f54c45;
-                --default-borders-radius: 10px;
-            }
-            body {
-                background-color: var(--primary-background-color);
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            header {
-                background-color: var(--head-background-color);
-                text-align: center;
-                font-family: serif;
-                color: black;
-                font-size: 15px;
-                padding: 20px;
-                border: 3px solid #333;
-                border-radius: var(--default-borders-radius);
-                margin-bottom: 10px;
-            }
-            #credit a {
-                text-align: center;
-                text-decoration: none;
-                color: inherit;
-            }
-            td {
-                border: 2px solid var(--default-borders-color);
-                border-radius: var(--default-borders-radius);
-                padding: 10px;
-                vertical-align: top;
-            }
-            .content {
-                background-color: var(--secondary-background-color);
-                border-radius: var(--default-borders-radius);
-                border: 2px solid var(--default-borders-color);
-                align-items: center;
-                justify-content: center;
-            }
-            .title-plate {
-                text-align: center;
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 2;
-                border: 2px solid var(--default-borders-color);
-                border-radius: var(--default-borders-radius);
-                margin-top: auto;
-                background-color: var(--head-background-color);
-            }
-            #graph {
-                width: 50%;
-                text-align: center;
-            }
-            #data-form {
-                text-align: center;
-                align-items: center;
-                
-            }
-            #result-table {
-                width: 100%;
-                text-align: center;
-                border-collapse: collapse;
-            }
-            #result-table th, #result-table td {
-                border: 1px solid var(--default-borders-color);
-                padding: 8px;
-            }
-
-            .r-button {
-                background-color: var(--secondary-background-color);
-                border: 2px solid var(--default-borders-color);
-                border-radius: var(--default-borders-radius);
-                color: black;
-                font-size: 16px;
-                width: 50px;
-                height: 30px;
-                margin: 5px;
-                cursor: pointer;
-                transition: var(--background-color) 0.3s ease;
-            }
-
-            .r-button:hover {
-                background-color: var(--primary-background-color);
-            }
-
-            input[type="text"] {
-                background-color: var(--primary-background-color);
-                border: 2px solid var(--default-borders-color);
-                border-radius: var(--default-borders-radius);
-                font-size: 16px;
-                padding: 10px;
-                width: 200px;
-                height: 15px;
-                margin: 10px;
-            }
-            input[type="submit"] {
-                background-color: var(--secondary-background-color);
-                border: 2px solid var(--default-borders-color);
-                border-radius: var(--default-borders-radius);
-                font-size: 18px;
-                padding: 10px 20px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-            
-
-            input[type="submit"]:hover {
-                background-color: var(--primary-background-color);
-            }
-            .r-button.active {
-                background-color: black;
-                color: black;
-                border: 2px solid black;
-            }   
-            .error-message {
-                color: red;
-                font-size: 12px;
-                margin-top: 5px;
-            }
-            .x-radio {
-                width: 20px;         
-                height: 20px;        
-                accent-color: black;  
-                cursor: pointer;     
-                margin-right: 10px;  
-                transition: transform 0.2s ease; 
-            }
-            .x-radio:hover {
-                transform: scale(1.2);  
-            }
-            label {
-                font-size: 18px;        
-                font-weight: bold;      
-                color: black;            
-                margin-right: 10px;     
-            }
-            .x-radio:checked {
-                background-color: #f0e6dc; /* Цвет фона для активной кнопки */
-            }
-            
-        </style> 
+        <link rel="stylesheet" href="stylesheet.css" type="text/css">
     </head>
     <body>
         <header>
@@ -213,6 +69,11 @@
                     <h2 class="title-plate">Input Data</h2>
                     <div id="data-form">
                     <form action="controller" id="input-form" method="post">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                         <label for="x" class="data-label">X:</label>
                         <label><input type="radio" name="x-value" class="x-radio" value="-5"> -5</label>
                         <label><input type="radio" name="x-value" class="x-radio" value="-4"> -4</label>
@@ -245,21 +106,11 @@
             <tr>
                 <td id="results" class="content" colspan="2">
                     <h2 class="title-plate">Hit Results</h2>
-                    <table id="result-table">
-                        <tr>
-                            <th>X</th>
-                            <th>Y</th>
-                            <th>R</th>
-                            <th>Current Time</th>
-                            <th>Execution Time</th>
-                            <th>Hit result</th>
-                        </tr>
-                    </table>
+                    <jsp:include page="result.jsp"/>
                 </td>
             </tr>
         </table>
         <div>
-            <a href="result.jsp">Return to results</a>
         </div>
         <script src="index.js"></script>
         <script src="highlight.js"></script>

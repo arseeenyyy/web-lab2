@@ -1,3 +1,9 @@
+function saveData(x, y, r) {
+    localStorage.setItem("x", x); 
+    localStorage.setItem("y", y); 
+    localStorage.setItem("r", r);
+}
+
 function highlightRButton() {
     const rButtons = document.querySelectorAll('.r-button');
     rButtons.forEach(function(button) {
@@ -41,27 +47,35 @@ function writeErrorMessage(message) {
     document.getElementById('error-message').innerHTML = message;
 }
 function addToTableRow(x, y, r, currentTime, execTime, hitResult) {
-    const table = document.getElementById('result-table');
-    const newRow = table.insertRow();
+    const tableBody = document.getElementById('result-table').getElementsByTagName('tbody')[0];
+    
+    const newRow = document.createElement("tr");
 
-    const xCell = newRow.insertCell(0); 
+    const xCell = document.createElement("td");
     xCell.textContent = x;
+    newRow.appendChild(xCell);
 
-    const yCell = newRow.insertCell(1); 
+    const yCell = document.createElement("td");
     yCell.textContent = y;
+    newRow.appendChild(yCell);
 
-    const rCell = newRow.insertCell(2); 
+    const rCell = document.createElement("td");
     rCell.textContent = r;
+    newRow.appendChild(rCell);
 
-    const currentTimeCell = newRow.insertCell(3); 
-    currentTimeCell.textContent = currentTime; 
+    const currentTimeCell = document.createElement("td");
+    currentTimeCell.textContent = currentTime;
+    newRow.appendChild(currentTimeCell);
 
-    const execTimeCell = newRow.insertCell(4); 
+    const execTimeCell = document.createElement("td");
     execTimeCell.textContent = execTime;
+    newRow.appendChild(execTimeCell);
 
-    const resultCell = newRow.insertCell(5); 
+    const resultCell = document.createElement("td");
     resultCell.textContent = hitResult ? 'hit' : 'miss';
+    newRow.appendChild(resultCell);
+
+    tableBody.appendChild(newRow);
 }
 
 
-window.onload = highlightRButton; 
