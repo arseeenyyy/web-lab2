@@ -1,34 +1,48 @@
 document.getElementById("submit").addEventListener("click", function(event) {
     event.preventDefault(); 
 
-    const name = document.getElementById("name").value; 
-    const age = document.getElementById("age").value; 
+    const xValue = document.querySelector('input[name="x-value"]:checked').value;
+    const yValue = document.getElementById('y-value').value;
+    const rValue = document.getElementById('r-value').value;
+    // alert([xValue, yValue, rValue]);
+
+    if (!(validateX(xValue) && validateY(yValue) && validateR(rValue))) return;
     fetch("check", {
         method: "POST", 
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-type": "application/x-www-form-urlencoded", 
         }, 
         body: new URLSearchParams({
-            "name": name, 
-            "age": age
+            "x": xValue, 
+            "y": yValue, 
+            "r": rValue
         })
     })
     .then(response => {
         if (!response.ok) throw new Error();
         return response.json();
     })
-    .then (function (answer) {
-        addToTableRow(answer);
+    .then(response => {
+        const hitResult = response.result;
+        const execTime = response.executionTime; 
+        const currentDate = new Date().toLocaleString();
+
+        addToTableRow(xValue, yValue, rValue, new Date().toLocaleString(), execTime, hitResult);
     })
+    .catch(error => {
+        console.error('error: ', error);
+    });
 });
 
-function addToTableRow(data) {
-    const name = data.name; 
-    const age = data.age;
-    const table = document.getElementById("resultTable"); 
-    const newRow = table.insertRow(); 
-    const nameCell = newRow.insertCell(0); 
-    nameCell.textContent = name;
-    const ageCell = newRow.insertCell(1);
-    ageCell.textContent = age;
-}
+
+
+// function addToTableRow(data) {
+//     const name = data.name; 
+//     const age = data.age;
+//     const table = document.getElementById("resultTable"); 
+//     const newRow = table.insertRow(); 
+//     const nameCell = newRow.insertCell(0); 
+//     nameCell.textContent = name;
+//     const ageCell = newRow.insertCell(1);
+//     ageCell.textContent = age;
+// }

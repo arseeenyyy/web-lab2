@@ -91,7 +91,7 @@
                 height: 30px;
                 margin: 5px;
                 cursor: pointer;
-                transition: background-color 0.3s ease;
+                transition: var(--background-color) 0.3s ease;
             }
 
             .r-button:hover {
@@ -123,7 +123,7 @@
                 background-color: var(--primary-background-color);
             }
             .r-button.active {
-                background-color: var(--error-color);
+                background-color: black;
                 color: black;
                 border: 2px solid black;
             }   
@@ -236,7 +236,7 @@
                         <input type="button" class="r-button" value="5">
                         <br>
                         <br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" id="submit">
                         <div id="error-message"></div>
                     </form>
                 </div>
@@ -258,5 +258,7 @@
                 </td>
             </tr>
         </table>
+        <script src="index.js"></script>
+        <script src="highlight.js"></script>
     </body>
 </html>
