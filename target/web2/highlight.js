@@ -1,9 +1,3 @@
-function saveData(x, y, r) {
-    localStorage.setItem("x", x); 
-    localStorage.setItem("y", y); 
-    localStorage.setItem("r", r);
-}
-
 function highlightRButton() {
     const rButtons = document.querySelectorAll('.r-button');
     rButtons.forEach(function(button) {
@@ -27,7 +21,7 @@ function validateY(y) {
     if (isNaN(yValueFloat)) {
         writeErrorMessage('Y value should be numeric');
         return false;
-    } else if (yValueFloat <= -5 || yValueFloat >= 5) {
+    } else if (yValueFloat < -5 || yValueFloat > 5) {
         writeErrorMessage('Y value should be between -5 and 5');
         return false;
     } else {
@@ -46,7 +40,7 @@ function writeErrorMessage(message) {
     document.getElementById('error-message').innerHTML = ''; 
     document.getElementById('error-message').innerHTML = message;
 }
-function addToTableRow(x, y, r, currentTime, execTime, hitResult) {
+function addToTableRow(x, y, r, execTime, hitResult) {
     const tableBody = document.getElementById('result-table').getElementsByTagName('tbody')[0];
     
     const newRow = document.createElement("tr");
@@ -62,10 +56,6 @@ function addToTableRow(x, y, r, currentTime, execTime, hitResult) {
     const rCell = document.createElement("td");
     rCell.textContent = r;
     newRow.appendChild(rCell);
-
-    const currentTimeCell = document.createElement("td");
-    currentTimeCell.textContent = currentTime;
-    newRow.appendChild(currentTimeCell);
 
     const execTimeCell = document.createElement("td");
     execTimeCell.textContent = execTime;

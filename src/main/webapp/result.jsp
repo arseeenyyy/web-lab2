@@ -17,7 +17,6 @@
                 <th>X</th>
                 <th>Y</th>
                 <th>R</th>
-                <th>Current Time</th>
                 <th>Execution Time</th>
                 <th>Hit result</th>
             </tr>
@@ -31,7 +30,6 @@
                             <td><%= point.getX() %></td>
                             <td><%= point.getY() %></td>
                             <td><%= point.getR() %></td>
-                            <td><%= new java.util.Date() %></td>
                             <td><%= point.getExecutionTime() %></td>
                             <td><%= point.getResult() ? "hit" : "miss" %></td>
                         </tr>
