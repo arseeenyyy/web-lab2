@@ -72,10 +72,11 @@ function addToTableRow(x, y, r, currentTime, execTime, hitResult) {
     newRow.appendChild(execTimeCell);
 
     const resultCell = document.createElement("td");
-    resultCell.textContent = hitResult ? 'hit' : 'miss';
+    resultCell.textContent = hitResult ? 'yes' : 'no';
     newRow.appendChild(resultCell);
 
     tableBody.appendChild(newRow);
 }
+
 
 

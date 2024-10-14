@@ -23,11 +23,8 @@
                 <td id="graph" class="content">
                     <h2 class="title-plate">Graph</h2>
                     <svg width="400" height="400" viewBox="-200 -200 400 400" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Оси -->
-                        <line x1="-200" y1="0" x2="200" y2="0" stroke="black"></line> <!-- Ось X -->
-                        <line x1="0" y1="200" x2="0" y2="-200" stroke="black"></line> <!-- Ось Y -->
-
-                        <!-- Черточки на осях -->
+                        <line x1="-200" y1="0" x2="200" y2="0" stroke="black"></line> 
+                        <line x1="0" y1="200" x2="0" y2="-200" stroke="black"></line> 
                         <line x1="-150" y1="-5" x2="-150" y2="5" stroke="black"></line>
                         <text x="-160" y="20" font-size="20">-R</text>
 
@@ -58,8 +55,8 @@
                         <!-- Прямоугольник -->
                         <rect x="-150" y="-150" width="150" height="150" fill-opacity="0.4" stroke="navy" fill="blue"></rect> 1
                         <!-- Стрелки -->
-                        <polygon points="200,0 190,5 190,-5" fill="black"></polygon> <!-- Стрелка на X -->
-                        <polygon points="0,-200 -5,-190 5,-190" fill="black"></polygon> <!-- Стрелка на Y -->
+                        <polygon points="200,0 190,5 190,-5" fill="black"></polygon>
+                        <polygon points="0,-200 -5,-190 5,-190" fill="black"></polygon> 
                         <!-- Подписи осей -->
                         <text x="180" y="20" font-size="20">R</text>
                         <text x="-40" y="-180" font-size="20">R</text>
@@ -106,22 +103,10 @@
             <tr>
                 <td id="results" class="content" colspan="2">
                     <h2 class="title-plate">Hit Results</h2>
-                    <%-- <table id="result-table">
-                        <tr>
-                            <th>X</th>
-                            <th>Y</th>
-                            <th>R</th>
-                            <th>Current Time</th>
-                            <th>Execution Time</th>
-                            <th>Hit result</th>
-                        </tr>
-                    </table> --%>
                     <jsp:include page="result.jsp"/>
                 </td>
             </tr>
         </table>
-        <div>
-        </div>
         <script src="index.js"></script>
         <script src="highlight.js"></script>
     </body>
