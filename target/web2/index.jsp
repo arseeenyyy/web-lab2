@@ -258,6 +258,9 @@
                 </td>
             </tr>
         </table>
+        <div>
+            <a href="result.jsp">Return to results</a>
+        </div>
         <script src="index.js"></script>
         <script src="highlight.js"></script>
     </body>

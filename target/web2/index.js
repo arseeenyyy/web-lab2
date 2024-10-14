@@ -33,16 +33,3 @@ document.getElementById("submit").addEventListener("click", function(event) {
         console.error('error: ', error);
     });
 });
-
-
-
-// function addToTableRow(data) {
-//     const name = data.name; 
-//     const age = data.age;
-//     const table = document.getElementById("resultTable"); 
-//     const newRow = table.insertRow(); 
-//     const nameCell = newRow.insertCell(0); 
-//     nameCell.textContent = name;
-//     const ageCell = newRow.insertCell(1);
-//     ageCell.textContent = age;
-// }
