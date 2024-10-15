@@ -58,8 +58,8 @@
                         <polygon points="200,0 190,5 190,-5" fill="black"></polygon>
                         <polygon points="0,-200 -5,-190 5,-190" fill="black"></polygon> 
                         <!-- Подписи осей -->
-                        <text x="180" y="20" font-size="20">R</text>
-                        <text x="-40" y="-180" font-size="20">R</text>
+                        <text x="180" y="20" font-size="20">X</text>
+                        <text x="-40" y="-180" font-size="20">Y</text>
                     </svg>
                 </td>
                 <td class="content">

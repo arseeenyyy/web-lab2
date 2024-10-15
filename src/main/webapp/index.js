@@ -1,12 +1,12 @@
 let points = [];
 
-function save() {
-    localStorage.setItem('points', JSON.stringify(points));
-}
-function load() {
-    points = JSON.parse(localStorage.getItem('points')) || []; 
-    drawAllPoints();
-}
+// function save() {
+//     localStorage.setItem('points', JSON.stringify(points));
+// }
+// function load() {
+//     points = JSON.parse(localStorage.getItem('points')) || []; 
+//     drawAllPoints();
+// }
 
 function drawPoint(x, y, hitResult) {
     const svg = document.querySelector('svg');
@@ -29,12 +29,12 @@ function clearPoints() {
     const circles = svg.querySelectorAll('circle');
     circles.forEach(circle => circle.remove());
 }
-function drawAllPoints() {
-    clearPoints(); 
-    points.forEach(point => {
-        drawPoint(point.x, point.y, point.hitResult); 
-    });
-}
+// function drawAllPoints() {
+//     clearPoints(); 
+//     points.forEach(point => {
+//         drawPoint(point.x, point.y, point.hitResult); 
+//     });
+// }
 document.getElementById('plot').addEventListener('click', function(event) {
     if (!validateR(document.getElementById('r-value').value)) return;
 
@@ -89,12 +89,12 @@ document.getElementById('submit').addEventListener('click', function(event) {
     .then(response => {
         const hitResult = response.result;
         const execTime = response.executionTime;
-
-        points.push({x: parseInt(xValue), y: parseFloat(yValue), hitResult: hitResult}); 
-        save();
-        clearSelection();
-        drawAllPoints();
-        
+`
+        // points.push({x: parseInt(xValue), y: parseFloat(yValue), hitResult: hitResult}); 
+        // save();`
+        // clearSelection();
+        clearPoints();
+        drawPoint(xValue, yValue, hitResult);        
         addToTableRow(xValue, yValue, rValue, execTime, hitResult);  
     })
     .catch(error => {
@@ -104,6 +104,6 @@ document.getElementById('submit').addEventListener('click', function(event) {
 
 window.onload = function() {
     highlightRButton();  
-    load();
-    clearSelection();
+    // load();
+    // clearSelection();
 };
